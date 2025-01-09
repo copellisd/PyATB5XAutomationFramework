@@ -12,7 +12,7 @@ from src.utils.utils import Utils
 
 class TestCreateBooking(object):
 
-    @pytest.mark.positive
+    #@pytest.mark.positive
     @allure.title("Verify that Create Booking Status and Booking ID shouldn't be null")
     @allure.description(
         "Creating a Booking from the payload and verify that booking id should not be null and status code should be 200 for the correct payload")
@@ -35,7 +35,7 @@ class TestCreateBooking(object):
         verify_json_key_not_null(response.json()["bookingid"])
         verify_json_key_gr_zero(response.json()["bookingid"])
 
-    @pytest.mark.positive
+   # @pytest.mark.positive
     @allure.title("Verify that Create Booking with invalid payload")
     @allure.description(
         "Creating a Booking id invalid, verify 500 for the correct payload")
@@ -49,7 +49,7 @@ class TestCreateBooking(object):
         )
         verify_http_status_code(response_data=response, expected_data=500)
 
-    @pytest.mark.positive
+    #@pytest.mark.positive
     @allure.title("Verify that Create Booking with invalid payload Part 2")
     @allure.description(
         "Creating a Booking id invalid, verify 500 for the incorrect payload")
